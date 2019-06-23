@@ -1,11 +1,12 @@
+
 /**
- * GuessingGame is a program made to guess your number from 1 to 10.
+ * guessingGame is a program made to guess your number from 1 to 10.
  *
  * @author (Ismail Abuhashish)
  * @version (23/6/2019)
  */
 import java.util.*;
-public class GuessingGame
+public class guessingGame
 {
     public static void main(String args[]){
 
@@ -14,44 +15,45 @@ int random; //random
 //Welcoming a new Player
 Scanner scan = new Scanner(System.in);
 System.out.println("This is the one and only guessing game");
-
-
+ 
 //stuff
 boolean go = true;
 boolean reset = true;
-int trycounter = 0;
+int xcounter = 0;
 int tries = 0;
 
-while (reset==true){
-int max = 10;
-int min =  1;
-int rand= (int)(Math.random() * ((max-min) + 1)) +min; 
-go= true;
-trycounter = 0;
+while(reset==true){
+   int max = 10;
+    int min =  1;
+     int x = (int)(Math.random() * ((max-min) + 1)) +min; //inclusive
+      go= true;
+       xcounter = 0;
 //-----------------------------------------Start of Second Loop--------------------------------------
+        while (go==true){
+            System.out.println("Please Guess a number from 1 to 10 with no decimals.");
+            int UserImput = scan.nextInt();
+            xcounter++;
+            System.out.println("UserImput:"+ UserImput );
+            if (UserImput==x){
+                System.out.println( "Winner");
+                go=false;       
+            }else{ 
+                if (xcounter==3){
+                go= false;
+            }
+            System.out.println("Sorry,Wrong");
+        }
+    } //end of loops
 
-while (go==true){
-    System.out.println("Please Guess a number from 1 to 10 with no decimals. You have three tries to get the right answer.");
 
-    String Answer = scan.nextLine();
-    trycounter++;
-    System.out.println("Answer:"+ Answer );
-if (rand==Answer){
-        System.out.println( "Winner");
-        go=false;       
-}else{ 
-    if (trycounter==3);
-    go= false;
-}
-System.out.println("Sorry,Wrong");
-}
-}
- //end of loops
-System.out.println("The random interger was"+ rand);
-System.out.println("Press 1 to play again or press 2 to exit");  
-int play = scan.nextInt();
-if (play != 1){
+    System.out.println("The random interger was " + x);
+
+    System.out.println("Press 1 to play again or press 2 to exit");  
+
+    int play = scan.nextInt();
+    if (play != 1){
     reset= false;
+}
 }
 }
 }
