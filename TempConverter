@@ -1,0 +1,47 @@
+* 
+* @author (Ismail Abuhashish) 
+* @version (25/6/2019)
+*/
+import java.util.*;
+
+public class TempConverter
+{
+public static void main(String args[]){
+{
+Scanner scan = new Scanner(System.in);
+
+
+boolean go = true; // if not true then the converter would exit
+while(go==true){
+ System.out.println("Please enter a temperature: ");// start of Program
+ double degree = scan.nextDouble();
+    System.out.println("Press 1 for Fahrenheit to Celcius or Press 2 for Celcius to Fahrenheit"); //choice between the two degrees
+
+int Answer = scan.nextInt();   //user's choice between the two
+if (Answer == 1){
+
+ System.out.println((degree - 32) * 5.0 / 9.0); //to get from Celsius to Fahrenheit
+}
+else{
+ System.out.println((9.0 / 5 * degree)+32); //to get from Fahrenheit to Celsius
+}
+  System.out.println("Press 3 to convert another temperature, or if you want to exit the converter press 4"); //choice to ontinue the converter or to exit it
+  int choice = scan.nextInt();
+  if (choice == 3){
+    go = true; //play again
+    }
+    else{
+    go = false; //exit
+    }
+
+    
+    
+    
+    
+    
+    
+
+}
+}
+}
+}
