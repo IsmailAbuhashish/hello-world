@@ -1,0 +1,30 @@
+/**
+ * This program will help you find the highest temp that correlates to the month
+ *
+ * @author (IsmailAbuhashish)
+ * @version (27/6/19)
+ */
+import java.util.*;
+public class TempCorrelationtoMonth{
+    public static void main(String args[]){
+    
+        String[] months = {"Jan","Feb","Mar","Apr","May","June","July","Aug","Sep","Oct","Nov","Dec"};
+        String highestMonth= "";
+        int [] temps = {34,32,40,50,55,70,73,75,70,65,55,40}; 
+        
+        int highest = 0;
+        String Month = "";
+        int i = 0;
+           
+         while ( i < 11){  
+           if (highest < temps[i]){ 
+              highest = temps[i];
+              highestMonth = months[i];
+            }
+            i= i + 1;
+            
+        } 
+        System.out.println(highestMonth + "-" + highest);
+        
+    }
+}
