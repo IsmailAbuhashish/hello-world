@@ -61,7 +61,7 @@ public class DrawingApp {
                 g2.setColor(Color.green); //color change when clicked
             }else {
             Color lpink = new Color(255,172,234);
-            g2.setColor(lpink);} // pink colored face
+            g2.setColor(lpink);} // pink colored face (original)
             g2.fillOval(100,100, 360, 270);
             
             //ears
@@ -69,7 +69,7 @@ public class DrawingApp {
                 g2.setColor(Color.green);//color change when clicked
             }else{
             Color ppink = new Color(255,172,234); 
-            g2.setColor(ppink);}// pink colored ear original
+            g2.setColor(ppink);}// pink colored ear (original)
             g2.fillOval(120,15, 150, 150);
             g2.fillOval(300,15, 150, 150);
             
@@ -84,7 +84,7 @@ public class DrawingApp {
                 g2.setColor(Color.green); //color change when clicked
             }else{
             Color dpink = new Color(255,159,230); 
-            g2.setColor(dpink);}// darker pink color original
+            g2.setColor(dpink);}// darker pink color (original)
             g2.fillOval(240,210, 80, 100);
             g2.setColor(Color.black);
             g2.fillRect(260,230,5,50);
@@ -93,8 +93,7 @@ public class DrawingApp {
             //display Text
             g2.setColor(Color.red);
             g2.setFont (new Font("TimesRoman", Font.PLAIN, 20)); //font of the text
-            g2.drawString("Welcome, My name is JohnJoe" ,  x,y);//text to display, x and y coordinates
-
+            g2.drawString("Welcome, My name is JohnJoe" ,  x,y);//text to display
 
 
         }
