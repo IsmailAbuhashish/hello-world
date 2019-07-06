@@ -1,0 +1,154 @@
+/**
+ * This is a bargraph representing the amount of rainfall in 2018 between Seattle and Philadelphia by month.
+ *
+ * @author (Ismail Abuhashish)
+ * @version (5/7/19)
+ */
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.WindowConstants;
+import java.awt.Dimension;
+import java.awt.Color;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+import java.awt.Point;
+import java.awt.event.MouseListener;
+import java.awt.event.MouseEvent;
+import java.awt.Font;
+import java.awt.FontMetrics;
+
+public class BarGraph {
+    private JFrame frame;
+
+    public BarGraph() {
+        frame = new JFrame("Bar Graph");
+        frame.setSize(600, 400);
+        frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        frame.setPreferredSize(frame.getSize());
+        frame.add(new DrawBars(frame.getSize()));
+        frame.pack();
+        frame.setVisible(true);
+    }
+
+    public static void main(String... argv) {
+        new BarGraph();
+    }
+
+    public static class DrawBars extends JPanel  implements MouseListener {
+        /*
+         * Declare Class Variables Here
+         */
+        int x = 20;
+        int y = 200;
+        double[] phila = {2.85,6.02,4.74,3.94,5.21,3.34,3.06,4.11,8.35,3.08,9.03,6.38};
+        double[] seattle = {8.12,2.16,2.44,5.69,0.12,0.63,0.05,0.2,0.98,3.78,5.42,6.08};
+
+        public DrawBars(Dimension dimension) {
+            setSize(dimension);
+            setPreferredSize(dimension);
+            addMouseListener(this);
+
+        }
+
+        @Override
+        public void paintComponent(Graphics g) {
+            Graphics2D g2 = (Graphics2D)g;//g2 is the graphics object that we need to use
+            //to draw things to the screen
+            Dimension d = getSize();
+            //create a background
+            g2.setColor(Color.white);
+            g2.fillRect(0, 0, d.width, d.height);
+            /**/
+            //Philadelphia variables
+            double jan = 2.85 * 20;
+            double feb = 6.02 * 20;
+            double mar = 4.74 * 20;
+            double apr = 3.94 * 20;
+            double may = 5.21 * 20;
+            double jun = 3.34 * 20;
+            double jul = 3.06 * 20;
+            double aug = 4.11 * 20;
+            double sep = 8.35 * 20;
+            double oct = 3.08 * 20;
+            double nov = 9.03 * 20;
+            double dec = 6.38 * 20;
+           //Seattle variables
+            double Jan = 8.12 * 20;
+            double Feb = 2.16 * 20;
+            double Mar = 2.44 * 20;
+            double Apr = 5.69 * 20;
+            double May = 0.12 * 20;
+            double Jun = 0.63 * 20;
+            double Jul = 0.05 * 20;
+            double Aug = 0.20 * 20;
+            double Sep = 0.98 * 20;
+            double Oct = 3.78 * 20;
+            double Nov = 5.42 * 20;
+             double Dec = 6.08 * 20;
+            
+            //--------------------------------------------------------------------------------
+            
+            //Bars
+            Color purple= new Color(102,0, 102); //Philadelphia's bar color (purple)
+            g2.setColor(purple);
+            //Philadelphia's rain bar graphs
+            g2.fillRect(50, 150 ,20,(int) jan);
+            g2.fillRect(95, 150, 20,(int) feb);
+            g2.fillRect(140, 150, 20,(int) mar);
+            g2.fillRect(185, 150, 20,(int) apr);
+            g2.fillRect(230, 150, 20,(int) may);
+            g2.fillRect(275, 150, 20,(int) jun);
+            g2.fillRect(320, 150, 20,(int) jul);
+            g2.fillRect(365, 150, 20,(int) aug);
+            g2.fillRect(410, 150, 20,(int) sep);
+            g2.fillRect(455, 150, 20,(int) oct);
+            g2.fillRect(500, 150, 20,(int) nov);
+            g2.fillRect(545, 150, 20,(int) dec);
+
+            Color green = new Color(10,255, 102); //Seattle's bar color (green)
+            g2.setColor(green);
+            x = 5;
+            //Seattle Bar graphs
+            g2.fillRect(30, 150, 20,(int) Jan);
+            g2.fillRect(75, 150, 20,(int) Feb);
+            g2.fillRect(120, 150, 20,(int) Mar);
+            g2.fillRect(165, 150, 20,(int) Apr);
+            g2.fillRect(210, 150, 20,(int) May);
+            g2.fillRect(255, 150, 20,(int) Jun);
+            g2.fillRect(300, 150, 20,(int) Jul);
+            g2.fillRect(345, 150, 20,(int) Aug);
+            g2.fillRect(390, 150, 20,(int) Sep);
+            g2.fillRect(435, 150, 20,(int) Oct);
+            g2.fillRect(480, 150, 20,(int) Nov);
+            g2.fillRect(525, 150, 20,(int) Dec);
+
+            //--------------------------------------------------------------------------------
+
+            //display Text
+            g2.setColor(purple);
+            g2.setFont (new Font("TimesRoman", Font.PLAIN, 20));
+            g2.drawString("Philadelphia" ,  10,30);//text to display, x and y coordinates
+            g2.setColor(green);
+            g2.drawString("Seattle" ,  200,30);
+
+        }
+        public void mousePressed(MouseEvent e) {
+            x = e.getX();
+            y = e.getY(); 
+
+            repaint();//updates the paint method
+        }
+
+        public void mouseReleased(MouseEvent e) {
+        }
+
+        public void mouseEntered(MouseEvent e) {
+        }
+
+        public void mouseExited(MouseEvent e) {
+        }
+
+        public void mouseClicked(MouseEvent e) {
+        }
+    }
+}
