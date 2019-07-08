@@ -59,69 +59,28 @@ public class BarGraph {
             g2.setColor(Color.white);
             g2.fillRect(0, 0, d.width, d.height);
             /**/
-            //Philadelphia variables
-            double jan = 2.85 * 20;
-            double feb = 6.02 * 20;
-            double mar = 4.74 * 20;
-            double apr = 3.94 * 20;
-            double may = 5.21 * 20;
-            double jun = 3.34 * 20;
-            double jul = 3.06 * 20;
-            double aug = 4.11 * 20;
-            double sep = 8.35 * 20;
-            double oct = 3.08 * 20;
-            double nov = 9.03 * 20;
-            double dec = 6.38 * 20;
-           //Seattle variables
-            double Jan = 8.12 * 20;
-            double Feb = 2.16 * 20;
-            double Mar = 2.44 * 20;
-            double Apr = 5.69 * 20;
-            double May = 0.12 * 20;
-            double Jun = 0.63 * 20;
-            double Jul = 0.05 * 20;
-            double Aug = 0.20 * 20;
-            double Sep = 0.98 * 20;
-            double Oct = 3.78 * 20;
-            double Nov = 5.42 * 20;
-             double Dec = 6.08 * 20;
-            
-            //--------------------------------------------------------------------------------
-            
+          
             //Bars
-            Color purple= new Color(102,0, 102); //Philadelphia's bar color (purple)
+            Color purple = new Color(102,0,102); //Philadelphia's bar color (purple)
             g2.setColor(purple);
             //Philadelphia's rain bar graphs
-            g2.fillRect(50, 150 ,20,(int) jan);
-            g2.fillRect(95, 150, 20,(int) feb);
-            g2.fillRect(140, 150, 20,(int) mar);
-            g2.fillRect(185, 150, 20,(int) apr);
-            g2.fillRect(230, 150, 20,(int) may);
-            g2.fillRect(275, 150, 20,(int) jun);
-            g2.fillRect(320, 150, 20,(int) jul);
-            g2.fillRect(365, 150, 20,(int) aug);
-            g2.fillRect(410, 150, 20,(int) sep);
-            g2.fillRect(455, 150, 20,(int) oct);
-            g2.fillRect(500, 150, 20,(int) nov);
-            g2.fillRect(545, 150, 20,(int) dec);
-
-            Color green = new Color(10,255, 102); //Seattle's bar color (green)
+            int XPos = 20;
+            for(int i = 0; i<phila.length;i++){
+            g2.fillRect( XPos,100 ,20 ,((int) phila[i] * 20));
+            XPos = XPos + 40;  
+        }
+           
+            Color green  = new Color(10,255,102); //Seattle's bar color (green)
             g2.setColor(green);
             x = 5;
             //Seattle Bar graphs
-            g2.fillRect(30, 150, 20,(int) Jan);
-            g2.fillRect(75, 150, 20,(int) Feb);
-            g2.fillRect(120, 150, 20,(int) Mar);
-            g2.fillRect(165, 150, 20,(int) Apr);
-            g2.fillRect(210, 150, 20,(int) May);
-            g2.fillRect(255, 150, 20,(int) Jun);
-            g2.fillRect(300, 150, 20,(int) Jul);
-            g2.fillRect(345, 150, 20,(int) Aug);
-            g2.fillRect(390, 150, 20,(int) Sep);
-            g2.fillRect(435, 150, 20,(int) Oct);
-            g2.fillRect(480, 150, 20,(int) Nov);
-            g2.fillRect(525, 150, 20,(int) Dec);
-
+            int XPla = 0;
+           
+          for(int i = 0; i<seattle.length;i++){
+            g2.fillRect( XPla,100 ,20 ,((int) seattle[i] * 20));
+            XPla = XPla + 40;  
+        }
+           
             //--------------------------------------------------------------------------------
 
             //display Text
