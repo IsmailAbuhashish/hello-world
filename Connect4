@@ -40,7 +40,7 @@ public class DrawGrid {
         int turn = 2;//even # for red's turn and odd # for yellow's turn. 
         int rows = 6;
         int cols = 7;
-            int[] colss = {5,5,5,5,5,5,5,5};
+        int[] colss = {5,5,5,5,5,5,5,5};
         Color[][] grid = new Color[rows][cols];
 
         public MultiDraw(Dimension dimension) {
@@ -87,7 +87,7 @@ public class DrawGrid {
                 }
            
 
-                System.out.println("Click under the grid to reset the board");
+                
         }
 
         public void mousePressed(MouseEvent e) {
@@ -105,7 +105,8 @@ public class DrawGrid {
                     else {
                           grid[ySpot][xSpot] = new Color (255,255,0);
                     }
-                     colss[xSpot] -=1;
+
+                    colss[xSpot] -=1;
                 if(xSpot > 6 || ySpot > 5){
                     for (int rows = 0; rows < grid.length; rows++) {
                         for (int col = 0; col < grid[0].length; col++) {
