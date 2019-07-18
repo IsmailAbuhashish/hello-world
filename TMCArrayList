@@ -1,0 +1,34 @@
+
+/**
+ * This program will help you find the highest temp that correlates to the month.
+ *
+ * @author (Ismail Abuhashish)
+ * @version (18/7/19)
+ */
+
+import java.util.*;
+
+
+public class TCMArrayList{   
+   public static void main(String args []){
+      ArrayList<Integer> temps = new ArrayList<>(Arrays.asList(34,32,40,50,55,70,73,75,70,65,55,40));
+      ArrayList<String> months = new ArrayList<>(Arrays.asList("Jan","Feb","Mar","Apr","May","June","July","Aug","Sep","Oct","Nov","Dec"));
+      String hotMonth = "";
+      int hotTemp = 0;
+   
+    for (int i = 0; i < temps.size(); i++){
+        while (i < 11){
+            if (hotTemp < temps.get(i)){
+              hotTemp = temps.get(i);
+              hotMonth = months.get(i);
+            }
+            i= i + 1;
+        }
+    }
+      
+      
+      System.out.println(hotMonth + "-" + hotTemp);
+    
+    
+   }
+}
